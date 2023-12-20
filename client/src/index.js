@@ -13,8 +13,12 @@ import Home from "./pages/homepage"
 import Work from "./pages/work"
 import Story from "./pages/story"
 
+import UserStore from './store';
+import { Provider } from 'mobx-react';
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <Provider userStore={UserStore}>
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
@@ -32,5 +36,6 @@ root.render(
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
+  </Provider>
 );
 
