@@ -1,21 +1,45 @@
-import React from "react";
-import {Switch , Route, Redirect} from 'react-router-dom';
-import { authRoutes } from "./routes/routes";
-import {NOT_FOUND_ROUTE } from "../utils/consts"
 
-const AppRouter = () =>{
-    const isAuth= false
-    return(
-        <Switch>
-            {isAuth && authRoutes.map(({path,component})=>
-                <Route key={path} path={path} Component= {compontnt}/>
-            )}
-            {authRoutes.map(({path,component})=>
-                <Route key={path} path={path} Component= {compontnt}/>
-            )}
-            <Redirect to {NOT_FOUND_ROUTE}/>
-        </Switch>
-    )
+import { Route, Routes } from 'react-router-dom';
+
+import { authRoutes, publicRoutes } from './routes/routes';
+import NotFound from "../pages/NotFound"
+
+
+const AppRouter = () => {
+
+  const isAuth = false; // replace with actual auth check
+
+  return (
+    <Routes>
+      
+      {/* Public routes */}
+      {publicRoutes.map(({ path, Component }) => (
+        <Route 
+          key={path}
+          path={path} 
+          element={<Component />}
+        />
+      ))}
+
+      {/* Protected routes */}
+      {isAuth && 
+        authRoutes.map(({ path, Component }) => (
+          <Route
+            key={path}
+            path={path}
+            element={<Component />}  
+          />
+        ))}
+
+      {/* 404 route */}
+      <Route 
+        path="*"
+        element={NotFound}
+      />
+
+    </Routes>
+  )
+
 }
 
 export default AppRouter;

@@ -1,13 +1,16 @@
-import Admin from "../pages/admin"
-import Search from "../pages/searchExc"
-import Auth from "../pages/auth"
-import Excursion from "../pages/excursion"
-import Excursions from "../pages/AllExcursions"
-import NotFound from "../pages/NotFound"
+import Admin from "../../pages/admin"
+import Excursions from "../../pages/AllExcursions"
+import Auth from "../../pages/auth"
+import Excursion from "../../pages/excursion"
+import NotFound from "../../pages/NotFound"
+import Search from "../../pages/AllExcursions"
+import Home from "../../pages/homepage"
 
 
 
-import { ADMIN_ROUTE, ALL_EXCURIONS_ROUTE, EXCURION_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SEARCH_ROUTE,NOT_FOUND_ROUTE } from "../utils/consts"
+
+
+import { ADMIN_ROUTE, ALL_EXCURIONS_ROUTE, EXCURION_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SEARCH_ROUTE,NOT_FOUND_ROUTE,HOME_ROUTE } from "../utils/consts"
 
 export const authRoutes = [
     {
@@ -41,5 +44,9 @@ export const publicRoutes = [
         path: NOT_FOUND_ROUTE,
         Component: NotFound
     },
+    {
+        path: HOME_ROUTE,
+        Component: Home
+    }
     
 ]

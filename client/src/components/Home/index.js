@@ -4,8 +4,8 @@ const Home = () => {
   return (
     <Box className="banner">
       <Box className="content-container">
-        <Typography variant="h2">Helping Others</Typography>
-        <Typography variant="h1">LIVE & TRAVEL</Typography>
+        <Typography variant="h2">Explore the world</Typography>
+        <Typography variant="h1">One tour at a time </Typography>
         <Typography variant="subtitle1">
           Special offers to suit your plan
         </Typography>
