@@ -61,7 +61,7 @@ const Subscribe = () => {
       </Box>
       <Box className="mailbox">
         <img
-          src="https://ik.imagekit.io/xe8oxb5c5l/Golobe/mailbox.png"
+          src="img/mailbox.svg"
           alt="mailbox"
         />
       </Box>
