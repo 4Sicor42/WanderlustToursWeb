@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Box, FormGroup } from "@mui/material";
 import FormHeader from "../Form/FormHeader";
 import SubmitButton from "../Form/SubmitButton";
@@ -55,9 +54,6 @@ const LoginForm = () => {
           }}
         >
           <FormCheckbox label={loginForm.checkboxLabel} />
-          <Link to="/recover-password" className="orange">
-            Forgot Password
-          </Link>
         </FormGroup>
         <SubmitButton label={loginForm.submitLabel} />
         <FormRedirect

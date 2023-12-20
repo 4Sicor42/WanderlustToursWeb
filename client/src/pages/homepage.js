@@ -11,8 +11,9 @@ const homepage = () => {
         <Header />
             <Container maxWidth={false} className="container">
                 <Home />
+
             </Container>
-        <Footer />
+        <Footer/>
         </>
     )
 

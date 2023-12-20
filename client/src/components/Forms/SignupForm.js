@@ -64,7 +64,7 @@ const SignupForm = () => {
         component="form"
         className="form"
         autoComplete="off"
-        onSubmit={() => navigate("/payment-method")}
+        onSubmit={() => navigate("/search")}
       >
         <Grid container columns={8} columnSpacing={{ md: 2, bg: 3 }}>
           {signupForm.inputs.map((input) => (

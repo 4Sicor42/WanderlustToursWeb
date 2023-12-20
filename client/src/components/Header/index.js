@@ -11,7 +11,7 @@ const pages = [
     id: "Find-excrursion",
     icon: <AirportShuttleIcon sx={{ pr: "3px" }} />,
     title: "Find excrursion",
-    link: "excrursion",
+    link: "search",
   }
 ];
 
@@ -20,7 +20,7 @@ const mobileMenu = [
     id: "Find-excrursion-mobile",
     icon: <AirportShuttleIcon sx={{ pr: "3px" }} />,
     title: "Find excrursion",
-    link: "excrursion",
+    link: "search",
   }
 ];
 
@@ -48,9 +48,7 @@ const Header = () => {
       }}
     >
       <Box
-        className={`heaerLogo ${
-          location.pathname === "/" ? "white-logo" : "black-logo"
-        }`}
+        className={`heaerLogo ${"header_logo"}`}
       />
 
 

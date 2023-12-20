@@ -33,10 +33,10 @@ const Footer = () => {
                     <h2 class="footer__nav-titel">Contact Us</h2>
                     <ul class="footer__menu">
                         <li class="footer__item">
-                            <a href="#" class="footer__link">Our Story</a>
+                            <a href="/story" class="footer__link">Our Story</a>
                         </li>
                         <li class="footer__item">
-                            <a href="#" class="footer__link">Work with us</a>
+                            <a href="/work" class="footer__link">Work with us</a>
                         </li>
                     </ul>
                 </div>

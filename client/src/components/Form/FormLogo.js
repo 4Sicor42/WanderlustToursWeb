@@ -4,10 +4,10 @@ const FormLogo = () => {
   const navigate = useNavigate();
   return (
     <img
-      src="https://ik.imagekit.io/xe8oxb5c5l/Golobe/Logo.png"
+      src="img/logo.svg"
       alt="Golobe logo"
-      width={110}
-      height={36}
+      width={210}
+      height={210}
       className="form-logo"
       onClick={() => navigate("/")}
     />
