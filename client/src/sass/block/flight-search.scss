@@ -1,0 +1,331 @@
+//Flight
+.flights {
+    padding-top: 80px;
+    background-image: url(../img/flight/airport.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &__titel {
+        max-width: 440px;
+        width: 100%;
+        margin-bottom: 8px;
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 45px;
+        line-height: 120%;
+        color: #fff;
+    }
+    &__subtitel {
+        @extend %Montserrat-Medium;
+        font-size: 20px;
+        line-height: 120%;
+        color: #fff;
+    }
+    &__search {
+        position: relative;
+        bottom: -180px;
+        box-shadow: 0 4px 16px rgba(141, 211, 187, 0.3);
+    }
+}
+//World
+.world {
+    padding-top: 260px;
+    &__map {
+        margin-top: 24px;
+        background-color: #8DD3BB;
+    }
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 488px;
+        background-image: url(../img/flight/map.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    &__link {
+        display: inline-block;
+        position: relative;
+        &_position {
+            left: 195px;
+            top: 70px;
+        }
+        &_top {
+            left: 690px;
+            top: 85px;
+        }
+        &_left {
+            left: 635px;
+            top: 255px;
+        }
+        &_right {
+            left: 50px;
+            top: 281px;
+        }
+        &_bottom {
+            left: -453px;
+            top: 293px;
+        }
+    }
+    &__card {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        gap: 0 8px;
+        background-color: #fff;
+        border-radius: 4px;
+        transition: 0.3s;
+        &:hover {
+            background-color: #79747E;
+            .world__name,
+            .world__pass {
+                color: #0ad8ef;
+                transition: 0.3s;
+            }
+        }
+    }
+    &__img {
+        width: 100%;
+        border-radius: 4px;
+    }
+    &__name {
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 16px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__pass {
+        @extend %Montserrat-Regular;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+    }
+}
+//Travel-info
+.travel-info {
+    padding-top: 80px;
+}
+//Traveling
+.traveling {
+    padding: 80px 0 274px 0;
+    &__content {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 24px;
+    }
+    &__info {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        padding: 24px;
+        background-color: #8DD3BB;
+        border-radius: 20px;
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &__titel {
+        max-width: 360px;
+        width: 100%;
+        @extend %TradeGothicLTStd-BoldExt;
+        font-size: 40px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__total {
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px 0;
+        background-color: #fff;
+        border-radius: 8px;
+    }
+    &__total-text {
+        @extend %TradeGothicLTExtended;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__price {
+        @extend %Montserrat-SemiBold;
+        font-size: 20px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__text {
+        margin: 24px 0 120px 0;
+        @extend %Montserrat-Regular;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+    }
+    &__btn {
+        padding: 16px;
+        width: 100%;
+        background-color: #fff;
+        border: none;
+        border-radius: 4px;
+        @extend %Montserrat-Medium;
+        font-size: 14px;
+        line-height: 120%;
+        color: #112211;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+            background-color: #e7e76a;
+        }
+    }
+    &__image {
+        border: 2px solid #8DD3BB;
+        border-radius: 12px;
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+    }
+}
+//Media
+@media (max-width: 1275px) {
+    .world {
+        &__link {
+            &_position {
+                left: 55px;
+                top: 70px;
+            }
+            &_top {
+                left: 547px;
+                top: 85px;
+            }
+            &_left {
+                left: 495px;
+                top: 255px;
+            }
+            &_right {
+                left: -90px;
+                top: 281px;
+            }
+            &_bottom {
+                left: -593px;
+                top: 293px;
+            }
+        }
+    }
+}
+@media (max-width: 1135px) {
+    .world {
+        &__link {
+            &_position {
+                left: 20px;
+                top: 70px;
+            }
+            &_top {
+                left: 477px;
+                top: 85px;
+            }
+            &_left {
+                left: 417px;
+                top: 255px;
+            }
+            &_right {
+                left: -160px;
+                top: 281px;
+            }
+            &_bottom {
+                left: -663px;
+                top: 293px;
+            }
+        }
+    }
+}
+@media (max-width: 1075px) {
+    .world {
+        &__inner {
+            padding: 20px 0;
+            background-image: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            height: 100%;
+            gap: 20px;
+        }
+        &__card {
+            padding: 10px;
+        }
+        &__link {
+            &_position,
+            &_top,
+            &_left,
+            &_right,
+            &_bottom {
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+    .traveling {
+        &__titel {
+            max-width: 100%;
+            width: 70%;
+            font-size: 20px;
+        }
+    }
+}
+@media(max-width: 800px) {
+    .traveling {
+        &__content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__info {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        &__text {
+            margin: 24px 0;
+        }
+    }
+}
+@media (max-width: 557px) {
+    .flights {
+        &__titel {
+            font-size: 25px;
+            text-align: center;
+        }
+        &__subtitel {
+            text-align: center;
+        }
+    }
+    .world {
+        &__inner {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .traveling {
+        &__content {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &__info {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+    }
+}
+@media(max-width: 340px) {
+    .traveling {
+        &__inner {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px 0;
+        }
+        &__titel {
+            text-align: center;
+        }
+    }
+}

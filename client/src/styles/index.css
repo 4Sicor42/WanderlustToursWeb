@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;500;700&display=swap');
+
+:root {
+  --blackish-green: #112211;
+  --mint-green: #8DD3BB;
+  --light-mint-green: #CDEAE1;
+  --mint-green-hover: #9BE0C8;
+  --mint-green-focus: #A5EBD3;
+  --slamon-orange: #8DD3BB;
+  --gray: #79747E;
+  --dark-gray: #383838;
+  --white: #FFFFFF;
+  --black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container.MuiContainer-root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}

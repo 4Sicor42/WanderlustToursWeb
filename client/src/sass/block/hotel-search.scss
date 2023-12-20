@@ -1,0 +1,40 @@
+//Other Look flight-search.scss
+.hotel-search {
+    background-image: url(../img/hotel/hotel.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.recent {
+    padding-top: 260px;
+    &__titel {
+        margin-bottom: 32px;
+        @extend %Montserrat-SemiBold;
+        font-size: 32px;
+        line-height: 120%;
+        color: #000;
+    }
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+@media(max-width: 827px) {
+    .recent {
+        &__content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+@media(max-width: 557px) {
+    .recent {
+        &__titel {
+            font-size: 16px;
+            text-align: center;
+        }
+        &__content {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
