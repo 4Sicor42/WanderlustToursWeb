@@ -3,7 +3,7 @@ import { Container } from "@mui/material";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Home from "../components/Home";
-
+import Reviews from"../components/Reviews"
 
 const homepage = () => {
     return(
@@ -11,7 +11,7 @@ const homepage = () => {
         <Header />
             <Container maxWidth={false} className="container">
                 <Home />
-
+                <Reviews/>
             </Container>
         <Footer/>
         </>

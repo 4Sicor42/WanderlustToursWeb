@@ -1,0 +1,19 @@
+.account_wrapper {
+    display: flex;
+
+    .sidebar {
+        width: 150px;
+        background-color: var(--data-color-primary);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+
+        a {
+            color: black;
+        }
+    }
+
+    .body_wrapper {
+        flex: 1;
+    }
+}

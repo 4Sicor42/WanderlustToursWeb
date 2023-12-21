@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+    <script src="js/mixitup.min.js"></script>
+    <script defer src="js/main.js"></script>
+    <title>Golobe</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="flight-search.html" class="menu__link menu__link_airplane active">Find Flight</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="hotel-search.html" class="menu__link menu__link_hotel" id="hotel-pass">Find Stays</a>
+                        </li>
+                    </ul>
+                    <a href="/" class="logo">
+                        <img class="logo__img" src="img/logo.svg" alt="logo">
+                    </a>
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link menu__link_color">Login</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link menu__link_sign">Sign up</a>
+                        </li>
+                    </ul>
+                    <button class="menu-btn">
+                        <span></span>
+                    </button>
+                    <ul class="menu-mobile">
+                        <li class="menu__item">
+                            <a href="flight-search.html" class="menu__link menu__link_airplane">Find Flight</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="hotel-search.html" class="menu__link menu__link_hotel">Find Stays</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Login</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link menu__link_sign">Sign up</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="main">
+            <section class="listing">
+                <div class="container">
+                    <div class="listing__inner">
+                        <div class="search listing__box-shadow">
+                            <form class="search__inner">
+                                <div class="search__info listing__info">
+                                    <fieldset class="search__fieldset">
+                                        <legend class="search__legend">From - To</legend>
+                                        <input class="search__input search__input_vector" type="text" placeholder="Lahore - Karachi">
+                                    </fieldset>
+                                    <fieldset class="search__fieldset search__fieldset_lite">
+                                        <legend class="search__legend">Trip</legend>
+                                        <select class="search__select-plane" name="" id="">
+                                            <option class="search__option-ticket" value="1">Return</option>
+                                            <option class="search__option-ticket" value="2">One-way</option>
+                                        </select>
+                                    </fieldset>
+                                    <fieldset class="search__fieldset">
+                                        <legend class="search__legend">Depart - Return</legend>
+                                        <input class="search__input" type="date">
+                                    </fieldset>
+                                    <fieldset class="search__fieldset">
+                                        <legend class="search__legend">Passenger - Class</legend>
+                                        <input class="search__input" type="text" placeholder="1 Passenger, Economy">
+                                    </fieldset>
+                                    <input class="listing__input" type="button">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="listing__box">
+                            <div class="listing__sidebar">
+                                <h2 class="listing__sidebar-titel">Filters</h2>
+                                <div class="spoller">
+                                    <div class="spoller__item">
+                                        <button class="spoller__titel">Price</button>
+                                        <div class="spoller__content">
+                                            <input type="text" class="price" name="my_range" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="spoller__item">
+                                        <button class="spoller__titel">Departure Time</button>
+                                        <div class="spoller__content">
+                                            <input type="text" class="time" name="my_range" value="" id="time" />
+                                        </div>
+                                    </div>
+                                    <div class="spoller__item">
+                                        <button class="spoller__titel">Rating</button>
+                                        <div class="spoller__content">
+                                            <div class="spoller__buttons">
+                                                <button class="spoller__btn">0+</button>
+                                                <button class="spoller__btn">1+</button>
+                                                <button class="spoller__btn">2+</button>
+                                                <button class="spoller__btn">3+</button>
+                                                <button class="spoller__btn">4+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="spoller__item">
+                                        <button class="spoller__titel">Airlines</button>
+                                        <div class="spoller__content">
+                                            <form class="spoller__form" action="URL">
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Emirated</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Fly Dubai</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Qatar</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Etihad</p>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="spoller__item">
+                                        <button class="spoller__titel">Trips</button>
+                                        <div class="spoller__content">
+                                            <form class="spoller__form" action="URL">
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Round trip</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">On Way</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">Multi-City</p>
+                                                </div>
+                                                <div class="spoller__inner">
+                                                    <input type="checkbox" class="spoller__input">
+                                                    <p class="spoller__text">My Dates Are Flexible</p>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listing__content">
+                                <div class="listing__content-inner">
+                                    <div class="listing__buttons">
+                                        <button class="listing__btn" data-filter=".cheapest">Cheapest<span class="listing__btn-span">$99 . 2h 18m</span></button>
+                                        <span class="listing__border"></span>
+                                        <button class="listing__btn" data-filter=".flight">Best<span class="listing__btn-span">$99 . 2h 18m</span></button>
+                                        <span class="listing__border"></span>
+                                        <button class="listing__btn" data-filter=".quickest">Quickest<span class="listing__btn-span">$99 . 2h 18m</span></button>
+                                        <span class="listing__border"></span>
+                                        <button class="listing__btn listing__btn_other" data-filter=".other">
+                                            <span class="listing__burger"></span>
+                                            Other sort
+                                        </button>
+                                    </div>
+                                    <div class="listing__content-filter">
+                                        <p class="listing__show">Showing 4 of <span class="listing__places">257 places</span></p>
+                                        <form action="URL" class="listing__content-form">
+                                            <fieldest class="listing__content-fieldest">
+                                                <legend class="listing__content-legend">Sort by</legend>
+                                                <select class="listing__content-select">
+                                                    <option value="1" class="listing__content-option">Recommended</option>
+                                                    <option value="2" class="listing__content-option">Top price</option>
+                                                    <option value="3" class="listing__content-option">Low price</option>
+                                                </select>
+                                            </fieldest>
+                                        </form>
+                                    </div>
+                                    <div class="listing__content-cards mixitup__box">
+                                        <div class="listing__card-content mix cheapest">
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly1.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly2.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly3.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly4.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing__card-content mix flight">
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly1.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly2.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly3.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly4.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing__card-content mix quickest">
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly1.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly2.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly3.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly4.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="listing__card-content mix other">
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly1.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly2.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly3.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                            <div class="listing__content-card">
+                                                <img class="listing__content-img" src="img/listing/fly4.jpg" alt="Air">
+                                                <div class="listing__content-item">
+                                                    <div class="listing__content-reviews">
+                                                        <p class="listing__content-review"><span class="listing__rating">4.2</span> Very Good <span class="listing__sum"> 54 reviews</span></p>
+                                                        <p class="listing__content-price">starting from <span class="listing__price">$104</span></p>
+                                                    </div>
+                                                    <forma class="listing__form">
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-box">
+                                                            <input class="listing__form-input" type="checkbox">
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                            <p class="listing__info-fly">non stop</p>
+                                                            <div class="lisying__form-text">
+                                                                <p class="listing__time">12:00 pm - 01:28 pm</p>
+                                                                <p class="listing__company">Emirates</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="listing__form-inner">
+                                                            <input class="listing__input-btn" type="button">
+                                                            <button class="listing__form-btn">View Deals</button>
+                                                        </div>
+                                                    </forma>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="listing__content-box">
+                                    <button class="listing__button">Show more results</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include("chunk/footer.html")
+    </div>
+
+    <!--jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--Plugin JavaScript file-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+
+</body>
+
+</html>

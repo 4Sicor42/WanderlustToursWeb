@@ -1,0 +1,368 @@
+
+
+.auth_wrapper {
+    display: flex;
+    height: 100vh;
+
+    .auth_form_container {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        border-right: 1px solid var(--data-color-primary);
+
+        @media (max-width:767px) {
+            width: 100% !important;
+
+        }
+
+        .auth_form_container_inner {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: scroll;
+            width: 70%;
+
+            @media (max-width:767px) {
+                width: 100% !important;
+
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .auth_logo_container {
+                margin-top: 60px;
+
+                @media (max-width:767px) {
+                    margin-top: 40px;
+                    display: flex;
+                    justify-content: center;
+
+
+                }
+
+                a {
+                    img {
+                        height: 40px;
+                        width: auto;
+                    }
+                }
+            }
+
+            .auth_form {
+                padding: 50px 0;
+
+                @media (max-width:767px) {
+                    padding: 30px 0;
+
+
+
+                }
+.subscription_text{
+    text-align: center;
+    font-style: normal;
+font-weight: 400;
+font-size: 12px;
+color: var(--data-text-color);
+opacity: 0.75;
+}
+                .back_link {
+                    display: flex;
+                    margin-bottom: 30px;
+                    text-decoration: none;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: var(--data-text-color);
+                }
+
+                .form_heading {
+                    h3 {
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 40px;
+                        margin-bottom: 16px;
+                    }
+
+                    p {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        margin-bottom: 30px;
+                    }
+                }
+
+                .form_input_outer {
+                    position: relative;
+                    margin: 12px 0;
+                    .visa_card{
+                        position: absolute;
+                        transform: translatey(-50%);
+                        top: 50%;
+                        right: 8px;
+                        width: 25px;
+                        height: auto;
+                    }
+
+                    .field-text-border {
+                        fieldset {
+                            border: 2px solid rgba(17, 34, 17, 0.4) !important;
+                            border-radius: 4px;
+                            background-color: transparent;
+
+                        }
+
+                        .MuiFormLabel-root {
+                            &.Mui-focused {
+                                color: rgba(17, 34, 17, 0.8);
+                            }
+                        }
+                    }
+                }
+
+                .remember_me_Container {
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 5px 0;
+                    align-items: center;
+
+
+
+                    .checkmark_outer {
+                        display: flex;
+                        align-items: center;
+
+                        .MuiButtonBase-root {
+                            padding-right: 3px;
+                            color: var(--data-color-primary);
+                        }
+
+                        p {
+                            margin: 0px !important;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 14px;
+                            columns: var(--data-text-color);
+                        }
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: var(--data-color-salmon);
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                    }
+                }
+
+                .auth_form_button {
+                    width: 100%;
+                    height: 48px;
+                    background-color: var(--data-color-primary);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 14px;
+                    border: none;
+                    outline: none;
+                    color: var(--data-text-color);
+                    margin: 30px 0 30px 0;
+                }
+
+                .forms_link {
+                    text-align: center;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: var(--data-text-color);
+                    margin: 5px 0 20px 0;
+
+                    a {
+                        color: var(--data-color-salmon);
+                        text-decoration: none;
+                    }
+
+                }
+
+               
+            }
+        }
+
+    }
+
+    .auth_slider_container {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        @media (max-width:767px) {
+            display: none;
+
+        }
+
+        .auth_slider {
+            width: 70%;
+            height: 80%;
+            border-radius: 12px;
+
+            @media (max-width:992px) {
+                width: 100%;
+                height: 100%;
+                border-radius: 0px;
+
+            }
+
+
+            .swiper-wrapper {
+                cursor: pointer;
+
+                .swiper-slide {
+                    text-align: center;
+                    font-size: 18px;
+                    background: #fff;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    .slider_img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+            }
+
+            .swiper-pagination {
+                .swiper-pagination-bullet {
+                    background: white;
+                    opacity: 1;
+                    height: 10px;
+                    width: 10px;
+                }
+
+                .swiper-pagination-bullet-active {
+                    background: var(--data-color-primary) !important;
+                    width: 40px;
+                    border-radius: 4px;
+                }
+            }
+        }
+
+    }
+}
+
+.register_wrapper {
+    flex-direction: row-reverse;
+
+    .auth_form_container {
+        border-right: none;
+        width: 60%;
+    }
+
+    .auth_slider_container {
+        width: 40%;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 50000s ease-in-out 0s;
+    background-color: transparent !important;
+}
+.form_input_outer {
+    position: relative;
+    margin: 12px 0;
+    .visa_card{
+        position: absolute;
+        transform: translatey(-50%);
+        top: 50%;
+        right: 8px;
+        width: 25px;
+        height: auto;
+    }
+
+    .field-text-border {
+        fieldset {
+            border: 2px solid rgba(17, 34, 17, 0.4) !important;
+            border-radius: 4px;
+            background-color: transparent;
+
+        }
+
+        .MuiFormLabel-root {
+            &.Mui-focused {
+                color: rgba(17, 34, 17, 0.8);
+            }
+        }
+    }
+}
+.checkmark_outer {
+    display: flex;
+    align-items: center;
+
+    .MuiButtonBase-root {
+        padding-right: 3px;
+        color: var(--data-color-primary) !important;
+    }
+
+    p {
+        margin: 0px !important;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        columns: var(--data-text-color);
+    }
+}
+.or_container {
+    height: 1px;
+    background-color: var(--data-text-color);
+    opacity: 0.5;
+    width: 100%;
+    position: relative;
+    margin: 20px 0 10px 0;
+
+    p {
+        position: absolute;
+        transform: translate(-50%);
+        top: -13px;
+        background-color: white;
+        padding: 0 10px;
+        left: 50%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--data-text-color);
+    }
+}
+
+.third_party_button_auth {
+    margin: 30px 0 20px 0;
+
+    button {
+        width: 100%;
+        background-color: transparent;
+        outline: none;
+        height: 56px;
+        border: 1px solid var(--data-color-primary);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            height: 24px;
+            width: 24px;
+        }
+    }
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/main.js"></script>
+    <title>Golobe</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="flight-search.html" class="menu__link menu__link_airplane active">Find Flight</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="hotel-search.html" class="menu__link menu__link_hotel" id="hotel-pass">Find Stays</a>
+                        </li>
+                    </ul>
+                    <a href="/" class="logo">
+                        <img class="logo__img" src="img/logo.svg" alt="logo">
+                    </a>
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link menu__link_color">Login</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link menu__link_sign">Sign up</a>
+                        </li>
+                    </ul>
+                    <button class="menu-btn">
+                        <span></span>
+                    </button>
+                    <ul class="menu-mobile">
+                        <li class="menu__item">
+                            <a href="flight-search.html" class="menu__link menu__link_airplane">Find Flight</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="hotel-search.html" class="menu__link menu__link_hotel">Find Stays</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">Login</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link menu__link_sign">Sign up</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="main">
+            <section class="flights">
+                <div class="container">
+                    <div class="flights__intro">
+                        <h1 class="flights__titel">Make your travel whishlist, we’ll do the rest</h1>
+                        <p class="flights__subtitel">Special offers to suit your plan</p>
+                        <div class="search flights__search">
+                            <h1 class="search__titel">Where are you flying? </h1>
+                            <form class="search__inner">
+                                <div class="search__info">
+                                    <fieldset class="search__fieldset">
+                                        <legend class="search__legend">From - To</legend>
+                                        <input class="search__input search__input_vector" type="text" placeholder="Lahore - Karachi">
+                                    </fieldset>
+                                    <fieldset class="search__fieldset search__fieldset_lite">
+                                        <legend class="search__legend">Trip</legend>
+                                        <select class="search__select-plane" name="" id="">
+                                            <option class="search__option-ticket" value="1">Return</option>
+                                            <option class="search__option-ticket" value="2">One-way</option>
+                                        </select>
+                                    </fieldset>
+                                    <fieldset class="search__fieldset">
+                                        <legend class="search__legend">Depart - Return</legend>
+                                        <input class="search__input" type="date">
+                                    </fieldset>
+                                    <fieldset class="search__fieldset">
+                                        <legend class="search__legend">Passenger - Class</legend>
+                                        <input class="search__input" type="text" placeholder="1 Passenger, Economy">
+                                    </fieldset>
+                                </div>
+                                <div class="search__button">
+                                    <input class="search__input-code" type="text" placeholder="+ Add Promo Code">
+                                    <button class="search__btn search__btn_plane">Show Filghts</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="world">
+                <div class="container">
+                    <div class="heading">
+                        <div class="heading__inner">
+                            <h1 class="heading__titel">Let's go places together</h1>
+                            <h4 class="heading__subtitel">Discover the latest offers and news and start planning your next trip with us.</h4>
+                        </div>
+                        <a href="flight-listing.html" class="heading__link-btn">See All</a>
+                    </div>
+                </div>
+                <div class="world__map">
+                    <div class="container">
+                        <div class="world__inner">
+                            <a href="#" class="world__link world__link_position">
+                                <div class="world__card">
+                                    <img class="world__img" src="img/flight/1.jpg" alt="Image">
+                                    <div class="world__info">
+                                        <p class="world__name">James Doe</p>
+                                        <p class="world__pass">Boarding Pass N’123</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="world__link world__link_top">
+                                <div class="world__card">
+                                    <img class="world__img" src="img/flight/2.jpg" alt="Image">
+                                    <div class="world__info">
+                                        <p class="world__name">James Doe</p>
+                                        <p class="world__pass">Boarding Pass N’123</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="world__link world__link_left">
+                                <div class="world__card">
+                                    <img class="world__img" src="img/flight/3.jpg" alt="Image">
+                                    <div class="world__info">
+                                        <p class="world__name">James Doe</p>
+                                        <p class="world__pass">Boarding Pass N’123</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="world__link world__link_right">
+                                <div class="world__card">
+                                    <img class="world__img" src="img/flight/4.jpg" alt="Image">
+                                    <div class="world__info">
+                                        <p class="world__name">James Doe</p>
+                                        <p class="world__pass">Boarding Pass N’123</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="world__link world__link_bottom">
+                                <div class="world__card">
+                                    <img class="world__img" src="img/flight/5.jpg" alt="Image">
+                                    <div class="world__info">
+                                        <p class="world__name">James Doe</p>
+                                        <p class="world__pass">Boarding Pass N’123</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="travel-info">
+                <div class="container">
+                    <div class="heading">
+                        <div class="heading__inner">
+                            <h1 class="heading__titel">Fall into travel</h1>
+                            <h4 class="heading__subtitel">Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.</h4>
+                        </div>
+                        <a href="#" class="heading__link-btn">See All</a>
+                    </div>
+                    <div class="travel">
+                        <div class="travel__card">
+                            <div class="travel__inner">
+                                <div class="travel__info">
+                                    <div class="tarvel__heading">
+                                        <h3 class="travel__titel">Melbourne</h3>
+                                        <p class="travel__text">An amazing journey</p>
+                                    </div>
+                                    <p class="travel__priсe">$ 700</p>
+                                </div>
+                                <button href="#" class="travel__btn">Book Flight</button>
+                            </div>
+                        </div>
+                        <div class="travel__card travel__card_paris">
+                            <div class="travel__inner">
+                                <div class="travel__info">
+                                    <div class="tarvel__heading">
+                                        <h3 class="travel__titel">Paris</h3>
+                                        <p class="travel__text">A Paris Adventure</p>
+                                    </div>
+                                    <p class="travel__priсe">$ 600</p>
+                                </div>
+                                <button href="#" class="travel__btn">Book Flight</button>
+                            </div>
+                        </div>
+                        <div class="travel__card travel__card_london">
+                            <div class="travel__inner">
+                                <div class="travel__info">
+                                    <div class="tarvel__heading">
+                                        <h3 class="travel__titel">London</h3>
+                                        <p class="travel__text">London eye adventure</p>
+                                    </div>
+                                    <p class="travel__priсe">$ 350</p>
+                                </div>
+                                <button href="#" class="travel__btn">Book Flight</button>
+                            </div>
+                        </div>
+                        <div class="travel__card travel__card_columbia">
+                            <div class="travel__inner">
+                                <div class="travel__info">
+                                    <div class="tarvel__heading">
+                                        <h3 class="travel__titel">Columbia</h3>
+                                        <p class="travel__text">Amazing streets</p>
+                                    </div>
+                                    <p class="travel__priсe">$ 700</p>
+                                </div>
+                                <button href="#" class="travel__btn">Book Flight</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="traveling">
+                <div class="container">
+                    <div class="heading">
+                        <div class="heading__inner">
+                            <h1 class="heading__titel">Fall into travel</h1>
+                            <h4 class="heading__subtitel">Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.</h4>
+                        </div>
+                        <a href="#" class="heading__link-btn">See All</a>
+                    </div>
+                    <div class="traveling__content">
+                        <div class="traveling__info">
+                            <div class="traveling__inner">
+                                <h1 class="traveling__titel">Backpacking Sri Lanka</h1>
+                                <div class="traveling__total">
+                                    <p class="traveling__total-text">From</p>
+                                    <p class="traveling__price">$ 700</p>
+                                </div>
+                            </div>
+                            <p class="traveling__text">Traveling is a unique experience as it's the best way to unplug from the pushes and pulls of daily life. It helps us to forget about our problems, frustrations, and fears at home. During our journey, we experience life in different ways. We explore new places, cultures, cuisines, traditions, and ways of living.</p>
+                            <button class="traveling__btn">Book Flight</button>
+                        </div>
+                        <div class="traveling__image">
+                            <img class="traveling__img" src="img/flight/t1.jpg" alt="#">
+                        </div>
+                        <div class="traveling__image">
+                            <img class="traveling__img" src="img/flight/t2.jpg" alt="#">
+                        </div>
+                        <div class="traveling__image">
+                            <img class="traveling__img" src="img/flight/t3.jpg" alt="#">
+                        </div>
+                        <div class="traveling__image">
+                            <img class="traveling__img" src="img/flight/t4.jpg" alt="#">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include("chunk/footer.html")
+    </div>
+</body>
+
+</html>
