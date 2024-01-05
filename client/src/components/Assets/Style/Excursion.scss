@@ -1,7 +1,7 @@
 .banner_Section_outer {
     .banner_section {
         height: 90vh;
-        background-image: url("../Images/Flight/banner.png");
+        background-image: url("../Images/Excursion/banner.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -51,7 +51,7 @@
 
         .tabs_button_section {
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
             align-items: center;
             column-gap: 5px;
             margin-top: 20px;
@@ -412,7 +412,7 @@
                         .price {
                             display: flex;
                             flex-direction: column;
-                            align-items: end;
+                            align-items: flex-end;
 
                             p {
                                 font-style: normal;
@@ -623,7 +623,7 @@
                 column-gap: 10px;
 
                 @media (max-width:767px) {
-                    justify-content: end;
+                    justify-content: flex-end;
 
                 }
 
@@ -789,9 +789,9 @@
 
     .price_Section {
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         flex-direction: column;
-        align-items: end;
+        align-items: flex-end;
 
         .item_price {
             font-style: normal;
@@ -1096,7 +1096,7 @@
                     .barcode {
                         display: flex;
                         justify-content: space-between;
-                        align-items: end;
+                        align-items: flex-end;
 
                         .flight_Code {
                             display: flex;
@@ -1204,7 +1204,7 @@
 
             h3 {
                 display: flex;
-                justify-content: end;
+                justify-content: flex-end;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 32px;
@@ -1374,7 +1374,7 @@
             display: flex;
 
             @media (max-width:414px) {
-                justify-content: end;
+                justify-content: flex-end;
                 margin-top: 15px;
             }
 
@@ -1459,12 +1459,11 @@
         .plane_icons {
             display: flex;
             align-items: center;
-            column-gap: 10px;
+            column-gap: 20px;
 
             .plane {
-                height: 50px;
-                width: 50px;
-                transform: rotate(90deg);
+                height: 70px;
+                width: 70px;
 
                 @media (max-width:992px) {
                     height: 40px;
@@ -1887,7 +1886,7 @@
     .close_icon {
         cursor: pointer;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         margin-left: auto !important;
         margin-right: unset !important;
         margin-bottom: 20px;

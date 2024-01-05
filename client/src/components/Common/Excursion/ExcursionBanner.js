@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
-const FlightBanner = () => {
+const ExcursionBanner = () => {
   return (
     <div className='banner_section'>
     <div className='banner_overlay'>
@@ -16,4 +16,4 @@ const FlightBanner = () => {
   )
 }
 
-export default FlightBanner
+export default ExcursionBanner

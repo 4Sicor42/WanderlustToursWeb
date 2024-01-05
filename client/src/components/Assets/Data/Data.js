@@ -22,4 +22,5 @@ export const payment = [
          value: "link",
       },
   ]
+
   
