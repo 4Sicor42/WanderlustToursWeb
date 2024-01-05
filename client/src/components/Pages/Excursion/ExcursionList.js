@@ -8,44 +8,43 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Slider from '@mui/material/Slider';
 import { Context } from '../../../index.js';
-import { Exception } from 'sass';
-
-const pricemarks = [
-    {
-      value: 0,
-      label: '$0',
-    },
-    {
-
-      value: 100,
-      label: '$100',
-    },
-  ];
 
 
-const minDistance = 10;
+
 
 const ExcursionList = () => {
 
-    const store = useContext(Context);
+    const {store} = useContext(Context);
+
     
-    console.log(store,store.excurions)
 
-    const [price, setPrice] = useState([0, 100]);
+    const minPrice = Math.min(...store._prices);
+    const maxPrice = Math.max(...store._prices); 
+    
+    const minDistance = maxPrice/minPrice*40;
 
-  const handlePriceChange = (event, newValue, activeThumb) => {
-    if (!Array.isArray(newValue)) {
-      return;
-    }
+    const [value, setValue] = useState([minPrice, maxPrice]);
+    const handleChange = (event, newValue, activeThumb) => {
+      if (!Array.isArray(newValue)) {
+        return;
+      }
+  
+      if (newValue[1] - newValue[0] < minDistance) {
+        if (activeThumb === 0) {
+          const clamped = Math.min(newValue[0], maxPrice+50 - minDistance);
+          setValue([clamped, clamped + minDistance]);
+        } else {
+          const clamped = Math.max(newValue[1], minDistance);
+          setValue([clamped - minDistance, clamped]);
+        }
+      } else {
+        setValue(newValue);
+      }
+    };
 
-    if (activeThumb === 0) {
-        setPrice([Math.min(newValue[0], price[1] - minDistance), price[1]]);
-    } else {
-        setPrice([price[0], Math.max(newValue[1], price[0] + minDistance)]);
-    }
-  };
-
-
+    const filteredExcursions = store._excursions.filter(excursion => {
+      return excursion.price >= value[0] && excursion.price <= value[1];
+    })
   return (
     <>
         <div className='flights_list_outer'>
@@ -68,11 +67,12 @@ const ExcursionList = () => {
                                           <div className='range_slider'>
                                             <Slider
                                                     getAriaLabel={() => 'Minimum distance'}
-                                                    value={price}
-                                                    onChange={handlePriceChange}
+                                                    value={value}
+                                                    onChange={handleChange}
                                                     valueLabelDisplay="auto"
                                                     disableSwap
-                                                    marks={pricemarks}
+                                                    
+                                                    max = {maxPrice+50}
                                                 />
                                             </div>
                                         </AccordionDetails>
@@ -85,8 +85,8 @@ const ExcursionList = () => {
                     <div className='col-12 col-md-8'>
                         <div className='list_col_outer'>
                             <div className='filtered_products_outer'>
-                            {store.map(excursion => (
-                            <ExcursionItemCard key={excursion.id} excursion={excursion}/>
+                            {filteredExcursions.map(excursion => (
+                              <ExcursionItemCard key={excursion.id} excursion={excursion}/>
                             ))}
                             </div>
                         </div>
