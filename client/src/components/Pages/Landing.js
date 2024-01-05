@@ -1,13 +1,16 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Container } from 'react-bootstrap';
 import Heading from '../Common/Heading';
-import Reviews from '../Common/Home/Reviews';
+import ReviewsComponent from '../Common/ReviewsComponent';
 import Banner from '../Common/Home/Banner';
 
 import TripCard from '../Common/Home/TripCard';
 import { Row } from 'react-bootstrap';
+import { Context } from '../../index.js';
+
 
 const Landing = () => {
+  const {store} = useContext(Context);
   return (
     <div className='landing_wrapper'>
        <Banner />
@@ -18,9 +21,10 @@ const Landing = () => {
               </div>
               <div className='Trip_section_inner'>
                 <Row>
-                  <TripCard />
-                  <TripCard />
-                  <TripCard />
+                 {
+                  store._excursions.map(excursion => {
+                  return <TripCard key={excursion.id} excursion={excursion}/> 
+                 })}
 
                 </Row>
         
@@ -32,7 +36,7 @@ const Landing = () => {
             <div className='landing_Sections_header'>
               <Heading title="Reviews" desc="What people says" />
             </div>
-            <Reviews />
+            <ReviewsComponent />
         </Container>
       </div>
     </div>
