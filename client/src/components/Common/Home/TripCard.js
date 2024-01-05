@@ -1,21 +1,22 @@
 import React from 'react';
-import Trip from '../../Assets/Images/Landing/trip.png';
+import { useNavigate } from 'react-router-dom';
 
-
-const TripCard = () => {
+const TripCard = ({excursion}) => {
+  let navigate = useNavigate();
   return (
-    <div className='col-12 col-md-6 col-lg-4'>
+    <div 
+    className='col-12 col-md-6 col-lg-4'
+    onClick={() => navigate(`/flight/list/${excursion.id}`, { replace: true })}>
             <div className='trip_Card'>
                 <div className='img_div'>
-                    <img src={Trip} alt="trip"></img>
+                <img src={excursion.img} alt={excursion.name}></img>
                 </div>
                 <div className='info_div'>
-                    <h3>Istanbul, Turkey</h3>
+                    <h3>{excursion.country}</h3>
                     <div className='facility'>
-                        <span>Flights</span>
-                        <span>Hotels</span>
-                        <span>Resorts</span>
+                        <span>Rayting : {excursion.rating}</span>
 
+                        <span>Date : {excursion.date}</span>
                     </div>
                 </div>
             </div>
