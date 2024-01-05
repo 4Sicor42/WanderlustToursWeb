@@ -1,0 +1,21 @@
+:root {
+    --data-color-primary: #8DD3BB;
+    --data-color-salmon: #FF8682;
+    --data-text-color: #112211;
+}
+
+.loader {
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader_text {
+    font-size: 44px;
+    color: var(--data-color-primary);
+    text-transform: uppercase;
+    font-weight: 800;
+
+}
