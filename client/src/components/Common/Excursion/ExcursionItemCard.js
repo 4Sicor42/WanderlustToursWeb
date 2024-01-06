@@ -5,8 +5,14 @@ import StarIcon from '@mui/icons-material/Star';
 
 
 const ExcursionItemCard = ({excursion}) => {
-    let navigate=useNavigate();
-
+    const navigate = useNavigate();
+    
+    const handleClick = () => {
+        navigate(`/excursion/${excursion.id}`, {
+          state: { excursion }
+        });
+      
+      }
   return (
 
     <div className='flight_card_inner'>
@@ -19,9 +25,9 @@ const ExcursionItemCard = ({excursion}) => {
                 <Heading title={excursion.name} desc={excursion.country} />
                 </div>
                 <div className='reviews'>
-                    <span className='rating_number'>{[...Array(excursion.rating)].map(() => 
-                                <StarIcon />
-                              )}</span>
+                    <span className='rating_number'>{[...Array(excursion.rating)].map((star, i) => (
+                              <StarIcon key={i} />
+                            ))}</span>
                 </div>                
                 <div className='price'>
                     <p>starting from</p>
@@ -32,7 +38,7 @@ const ExcursionItemCard = ({excursion}) => {
             <div className='detail_fav_container'>
             <button 
             className="detail_btn"
-            onClick={() => navigate(`/excursion/list/${excursion.id}`, {replace: true})}
+            onClick={handleClick}
             >
             View Detail
             </button>
