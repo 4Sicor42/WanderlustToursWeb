@@ -46,14 +46,14 @@ export default class ExcurionStore {
             "See the Colosseum, Forum and must-see areas..."      
           ];
           
-          this._raytings = [4, 5, 3];
+          this._raytings = [5, 4, 3, 2, 1];
           
           
           this._excursions = [
             {
               id: 1,
               name: this._names[0],
-              address: this._adresses[0], 
+              adress: this._adresses[0], 
               country: this._countryes[0],
               date: this._dates[0],
               count: this._counts[0],
@@ -66,7 +66,7 @@ export default class ExcurionStore {
             {
               id: 2, 
               name: this._names[1],
-              address: this._adresses[1],
+              adress: this._adresses[1],
               country: this._countryes[1],
               date: this._dates[1],
               count: this._counts[1], 
@@ -79,7 +79,7 @@ export default class ExcurionStore {
             {
               id: 3,
               name: this._names[2],
-              address: this._adresses[2],
+              adress: this._adresses[2],
               country: this._countryes[2],
               date: this._dates[2],
               count: this._counts[2],
