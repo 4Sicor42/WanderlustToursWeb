@@ -1,7 +1,6 @@
 .banner_Section_outer {
     .banner_section {
         height: 90vh;
-        background-image: url("../Images/Excursion/banner.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -640,7 +639,8 @@
             column-gap: 10px;
             padding: 10px 0px;
             overflow-x: scroll;
-            cursor: pointer;
+
+
 
             &::-webkit-scrollbar {
                 height: 6px;
@@ -652,8 +652,10 @@
             }
 
             img {
+                cursor: pointer;
                 height: 100px;
                 width: 100px;
+                border-radius: 25%;
             }
         }
 
