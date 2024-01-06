@@ -1,14 +1,20 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Container,Row } from 'react-bootstrap';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Path from '../../Assets/Images/Excursion/overview.png';
-import User from '../../Assets/Images/user.png';
 import Code from '../../Assets/Images/code.png';
+
+import { Context } from '../../../index.js';
+import { useLocation } from 'react-router-dom';
 
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 
 const ExcursionOverview = () => {
+  const {user} = useContext(Context);
+  const location = useLocation();
+  const excursion = location.state.excursion;
+  console.log(user)
   return (
     <div className='booking_overview_wrapper'>
         <Container>
@@ -16,8 +22,8 @@ const ExcursionOverview = () => {
                 <div className='col-12'>
                     <div className='overview_flight_header'>
                          <div className='name'>
-                            <h3>Istanbul old house</h3>
-                            <p> <LocationOnIcon /> Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
+                            <h3>{excursion.name}</h3>
+                            <p> <LocationOnIcon />{excursion.adress}, {excursion.country}</p>
                          </div>
                     </div>
                 </div>
@@ -26,16 +32,16 @@ const ExcursionOverview = () => {
                          <div className='flight_banner_detail'>
                            <div className='in_out_time_container'>
                               <div className='time'>
-                                 <h4>12:00 Pm</h4>
+                                 <h4>{excursion.date}</h4>
                                  <p>Chek in</p>
                               </div>
                            </div>
                            <div className='user_Detail'>
                               <div className='user_upper_header'>
                                  <div className='user_img_name'>
-                                        <img src={User} alt="user"></img>
-                                        <p>Mohsin Ali 
-                                          <span>Boarding Pass 123m</span>
+                                        <img src={user.image} alt="user"></img>
+                                        <p>{user.name}
+                                          <span>{excursion.manager}</span>
                                         </p>
                                  </div>
 
@@ -50,7 +56,7 @@ const ExcursionOverview = () => {
                                           </div>
                                           <div className='detail_portion'>
                                             <p>Check in time</p>
-                                            <span>12:00 pm</span>
+                                            <span>{excursion.date}</span>
                                           </div>
                                         </li>
                                         <li>
@@ -59,16 +65,16 @@ const ExcursionOverview = () => {
 
                                           </div>
                                           <div className='detail_portion'>
-                                            <p>Neet</p>
-                                            <span>On arial</span>
+                                            <p>Meet</p>
+                                            <span>On {excursion.adress}</span>
                                           </div>
                                         </li>
                                      </ul>
                                  </div>
                                  <div className='barcode'>
                                     <div className='flight_Code'>
-                                      <p>EK</p>
-                                      <span>123aksjdh</span>
+                                      <p>{excursion.country}</p>
+                                      <span>{excursion.name}</span>
                                     </div>
                                     <img src={Code} alt="code"></img>
                                  </div>
