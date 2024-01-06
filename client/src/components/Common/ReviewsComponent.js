@@ -41,7 +41,7 @@ function ReviewsComponent() {
 
 
                     {reviews.reviews.map(review => (
-                      <SwiperSlide >
+                      <SwiperSlide key={review.id}>
                         <ReviewItem
                           key={review.id}
                           review={review}
