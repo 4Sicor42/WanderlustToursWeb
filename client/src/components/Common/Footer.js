@@ -23,7 +23,7 @@ const Footer = () => {
                   <button>Subscribe</button>
                 </div>
               </div>
-              <img className='newsletter_img' src={Newsletter}></img>
+              <img  className='newsletter_img' src={Newsletter} alt="Newsletter"/>
             </div>
             <div className='col-6 col-md-6 col-lg-2'>
               <div className='footer_logo_container'>

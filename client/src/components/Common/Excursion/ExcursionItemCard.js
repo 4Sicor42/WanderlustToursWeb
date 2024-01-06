@@ -32,7 +32,7 @@ const ExcursionItemCard = ({excursion}) => {
             <div className='detail_fav_container'>
             <button 
             className="detail_btn"
-            onClick={() => navigate(`/flight/list/${excursion.id}`, {replace: true})}
+            onClick={() => navigate(`/excursion/list/${excursion.id}`, {replace: true})}
             >
             View Detail
             </button>

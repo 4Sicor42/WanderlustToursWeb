@@ -34,10 +34,10 @@ function App() {
           </Route>
           <Route element={<Layout />}>
               <Route path='/' element={<Landing />} />
-              <Route path="flight/list" element={<FlightsList />} />
-              <Route path="flight/list/:id" element={<FlightDetail />} />
-              <Route path="flight/list/:id/booking" element={<FlightBooking />} />
-              <Route path="flight/list/:id/overview" element={<FlightOverview />} />
+              <Route path="excursion/list" element={<FlightsList />} />
+              <Route path="excursion/list/:id" element={<FlightDetail />} />
+              <Route path="excursion/list/:id/booking" element={<FlightBooking />} />
+              <Route path="excursion/list/:id/overview" element={<FlightOverview />} />
               <Route path='/account' element={<Account />}/>
               <Route path='/account/history' element={<AccountHistory />}/>
           </Route>

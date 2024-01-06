@@ -6,7 +6,7 @@ const TripCard = ({excursion}) => {
   return (
     <div 
     className='col-12 col-md-6 col-lg-4'
-    onClick={() => navigate(`/flight/list/${excursion.id}`, { replace: true })}>
+    onClick={() => navigate(`/excursion/list/${excursion.id}`, { replace: true })}>
             <div className='trip_Card'>
                 <div className='img_div'>
                 <img src={excursion.img} alt={excursion.name}></img>
