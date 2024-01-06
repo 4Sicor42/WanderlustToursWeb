@@ -15,10 +15,10 @@ const Login =lazy(() => import("./Components/Pages/User/Login"));
 const Register =lazy(() => import("./Components/Pages/User/Register"));
 
 
-const FlightsList =lazy(() => import("./Components/Pages/Excursion/ExcursionList"));
-const FlightDetail =lazy(() => import("./Components/Pages/Excursion/ExcursionDetail"));
-const FlightOverview =lazy(() => import("./Components/Pages/Excursion/ExcursionOverview"));
-const FlightBooking =lazy(() => import("./Components/Pages/Excursion/ExcursionBooking"));
+const ExcursionList =lazy(() => import("./Components/Pages/Excursion/ExcursionList"));
+const ExcursionDetail =lazy(() => import("./Components/Pages/Excursion/ExcursionDetail"));
+const ExcursionOverview =lazy(() => import("./Components/Pages/Excursion/ExcursionOverview"));
+const ExcursionBooking =lazy(() => import("./Components/Pages/Excursion/ExcursionBooking"));
 
 const Account =lazy(() => import("./Components/Pages/Account/Account"));
 const AccountHistory =lazy(() => import("./Components/Pages/Account/AccountHistory"));
@@ -34,10 +34,15 @@ function App() {
           </Route>
           <Route element={<Layout />}>
               <Route path='/' element={<Landing />} />
-              <Route path="excursion/list" element={<FlightsList />} />
-              <Route path="excursion/list/:id" element={<FlightDetail />} />
-              <Route path="excursion/list/:id/booking" element={<FlightBooking />} />
-              <Route path="excursion/list/:id/overview" element={<FlightOverview />} />
+              <Route path="excursion/list" element={<ExcursionList />} />
+              <Route path="/excursion/:id" element={<ExcursionDetail />}>
+              </Route>
+              <Route path="/excursion/:id" element={<ExcursionDetail/>} />
+
+              <Route path="/excursion/:id/booking" element={<ExcursionBooking/>} />
+
+              <Route path="/excursion/:id/overview" element={<ExcursionOverview/>} />
+              
               <Route path='/account' element={<Account />}/>
               <Route path='/account/history' element={<AccountHistory />}/>
           </Route>
@@ -46,5 +51,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;
