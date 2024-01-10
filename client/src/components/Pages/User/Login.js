@@ -15,7 +15,7 @@ import { Context } from '../../../index.js';
 
 import AuthSlider from '../../Common/auth/AuthSlider';
 import FormHeader from '../../Common/auth/FormHeader';
-
+import {login} from "../../../http/userAPI";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -28,13 +28,21 @@ const Login = () => {
         event.preventDefault();
     };
 
-    
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-  const handleLogin = () => {
-    //const loggedInUser = { name: 'John' }; логика
-    // Обновите состояние пользователя в хранилище
-    user.setIsAuth(true);
-  };
+
+    const handleLogin = async () => {
+        try {
+            let data = await login(email, password);
+            user.setUser(user)
+            user.setIsAuth(true)
+
+        } catch (e) {
+            alert(e.response.data.message)
+        }
+
+    }
 
   
   return (
@@ -60,7 +68,8 @@ const Login = () => {
                                         className="field-text-border"
                                         name="email"                                       
                                         type="email" 
-                                       
+                                        value={email}
+                                        onChange={e => setEmail(e.target.value)}
                                     />
                                 </div>
                             </div>
@@ -85,6 +94,8 @@ const Login = () => {
                                         </InputAdornment>
                                         }
                                         label="Password"
+                                        value={password}
+                                        onChange={e => setPassword(e.target.value)}
                                         />
                                     </FormControl>
                                 </div>
