@@ -51,7 +51,7 @@ const handleToggler=()=>{
          </div>
          {user.isAuth?
           <div className='navbar_auth_buttons'>
-          <Link to="/account" className='login_link'>Name</Link>
+          <Link to="/account" className='login_link'>{user.name}</Link>
 
           </div>
           :
