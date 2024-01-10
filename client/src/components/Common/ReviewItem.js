@@ -16,9 +16,9 @@ function ReviewItem({review}) {
                               </p>
                             </div>
                             <div className='rating_stars' >
-                            {[...Array(rating)].map((i) => (
-                              <StarIcon key={i} />
-                            ))}
+                            {[...Array(rating)].map((_, index) => (
+  <StarIcon key={index} />  
+))}
                             </div>
                             <div className='company_name'>
                                <h4>{name}</h4>
