@@ -41,7 +41,7 @@ const ExcursionOverview = () => {
                                  <div className='user_img_name'>
                                         <img src={user.image} alt="user"></img>
                                         <p>{user.name}
-                                          <span>{excursion.manager}</span>
+                                          <span> Manager: {excursion.manager}</span>
                                         </p>
                                  </div>
 

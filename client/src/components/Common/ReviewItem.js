@@ -5,7 +5,7 @@ import StarIcon from '@mui/icons-material/Star';
 
 function ReviewItem({review}) {
 
-    const {id, heading, description, rating, name, company, image } = review;
+    const {heading, description, rating, name, company, image } = review;
   
     return (
 
@@ -16,7 +16,7 @@ function ReviewItem({review}) {
                               </p>
                             </div>
                             <div className='rating_stars' >
-                            {[...Array(rating)].map((star, i) => (
+                            {[...Array(rating)].map((i) => (
                               <StarIcon key={i} />
                             ))}
                             </div>

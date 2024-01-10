@@ -3,10 +3,16 @@ import { useNavigate } from 'react-router-dom';
 
 const TripCard = ({excursion}) => {
   let navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/excursion/${excursion.id}`, {
+      state: { excursion }
+    });
+  
+  }
   return (
     <div 
     className='col-12 col-md-6 col-lg-4'
-    onClick={() => navigate(`/excursion/list/${excursion.id}`, { replace: true })}>
+    onClick={handleClick}>
             <div className='trip_Card'>
                 <div className='img_div'>
                 <img src={excursion.img} alt={excursion.name}></img>
