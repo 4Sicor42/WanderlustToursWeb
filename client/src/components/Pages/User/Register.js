@@ -15,9 +15,13 @@ import Checkbox from '@mui/material/Checkbox';
 import { Context } from '../../../index.js';
 import FormHeader from '../../Common/auth/FormHeader';
 
+import {registration} from "../../../http/userAPI";
+
 const Register = () => {
     let navigate=useNavigate();
     const [showPassword, setShowPassword] = useState(false);
+
+    const { user } = useContext(Context);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -25,13 +29,20 @@ const Register = () => {
         event.preventDefault();
     };
 
-    const { user } = useContext(Context);
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-    const handleLogin = () => {
-        //const loggedInUser = { name: 'John' }; логика
-        // Обновите состояние пользователя в хранилище
-        user.setIsAuth(true);
-      };
+    const handleLogin = async () => {
+        try {
+            let data = await registration(email, password);
+            user.setUser(user)
+            user.setIsAuth(true)
+
+        } catch (e) {
+            alert(e.response.data.message)
+        }
+
+    }
 
   return (
     <div className='auth_wrapper register_wrapper'>
@@ -83,6 +94,8 @@ const Register = () => {
                                         className="field-text-border"
                                         name="email"                                       
                                         type="text"  
+                                        value={email}
+                                        onChange={e => setEmail(e.target.value)}
                                     />
                                 </div>
                             </div>
@@ -120,6 +133,8 @@ const Register = () => {
                                         </InputAdornment>
                                         }
                                         label="Password"
+                                        value={password}
+                                        onChange={e => setPassword(e.target.value)}
                                         />
                                     </FormControl>
                                 </div>
