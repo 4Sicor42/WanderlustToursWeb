@@ -15,8 +15,7 @@ import { Context } from '../../../index.js';
 
 import AuthSlider from '../../Common/auth/AuthSlider';
 import FormHeader from '../../Common/auth/FormHeader';
-import {login} from "../../../http/userAPI";
-
+import {login,check} from "../../../http/userAPI";
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     let navigate=useNavigate();
@@ -30,19 +29,34 @@ const Login = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
-
+    const [emailError, setEmailError] = useState(false);
+    const [emailErrorMessage, setEmailErrorMessage] = useState('');
     const handleLogin = async () => {
-        try {
-            let data = await login(email, password);
-            user.setUser(user)
-            user.setIsAuth(true)
-
-        } catch (e) {
-            alert(e.response.data.message)
+        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+          setEmailError(true);
+          setEmailErrorMessage('Invalid email format');
+          return;
         }
-
-    }
+      
+      
+        try {
+            let data= await login(email, password);
+            user.setEmail(data.email);
+            check().then(data => {
+                user.setUserId(data.id);
+                user.setPhone(data.phone);
+                user.setAddress(data.address);
+                user.setDate(data.date);
+                user.setName(data.name);
+                user.setImg(data.img);
+                user.setIsAuth(true)})
+        } catch (e) {
+          alert(e.response.data.message);
+          return;
+        }
+      
+        navigate('/account');
+      }
 
   
   return (
@@ -60,16 +74,21 @@ const Login = () => {
                             </div>
                             <div className='col-12'>
                                 <div className='form_input_outer'>
-                                    <TextField
-                                        sx={{ width: "100%" }}
-                                        id="outlined-basic"
-                                        label="Email"
-                                        variant="outlined"
-                                        className="field-text-border"
-                                        name="email"                                       
-                                        type="email" 
-                                        value={email}
-                                        onChange={e => setEmail(e.target.value)}
+                                <TextField
+                                    sx={{ width: "100%" }}
+                                    id="outlined-basic"
+                                    label="Email"
+                                    variant="outlined"
+                                    className={`field-text-border ${emailError ? 'error' : ''}`}
+                                    name="email"
+                                    type="email"
+                                    value={email}
+                                    onChange={e => {
+                                        setEmail(e.target.value);
+                                        setEmailError(false);
+                                    }}
+                                    error={emailError}
+                                    helperText={emailError ? emailErrorMessage  : ''}
                                     />
                                 </div>
                             </div>
@@ -82,21 +101,24 @@ const Login = () => {
                                         id="outlined-adornment-password"
                                         type={showPassword ? 'text' : 'password'}
                                         endAdornment={
-                                        <InputAdornment position="end">
-                                            <IconButton
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                            edge="end"
-                                            >
-                                            {showPassword ? <VisibilityOff /> : <Visibility />}
-                                            </IconButton>
-                                        </InputAdornment>
-                                        }
+                                            <InputAdornment position="end">
+                                                <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleClickShowPassword}
+                                                onMouseDown={handleMouseDownPassword}
+                                                edge="end"
+                                                >
+                                                {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                </IconButton>
+                                            </InputAdornment>
+                                            }
                                         label="Password"
                                         value={password}
-                                        onChange={e => setPassword(e.target.value)}
+                                        onChange={e => {
+                                            setPassword(e.target.value);
+                                        }}
                                         />
+
                                     </FormControl>
                                 </div>
                             </div>
@@ -106,11 +128,10 @@ const Login = () => {
                                 type='submit'
                                 className='auth_form_button'
                                 onClick={() => {
-                                    handleLogin(); 
-                                    navigate('/account');
+                                    handleLogin();
                                 }}
                             >
-                                Create Account
+                               Login into account
                             </button>
                             </div>
                             <div className='col-12'>

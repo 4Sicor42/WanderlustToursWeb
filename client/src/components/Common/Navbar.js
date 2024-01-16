@@ -4,13 +4,15 @@ import Logo from '../Assets/Images/Logo.png';
 import MenuIcon from '@mui/icons-material/Menu';
 import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
 import { Context } from '../../index.js';
-import { observer } from 'mobx-react';
 
 
 
-const Navbar = observer(() => {
+const Navbar = () => {
   const { user } = useContext(Context);
   const [navbartogle, setToggler] = useState(false);
+
+
+
 
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
@@ -66,6 +68,6 @@ const handleToggler=()=>{
     </div>
   )
 
-})
+}
 
 export default Navbar

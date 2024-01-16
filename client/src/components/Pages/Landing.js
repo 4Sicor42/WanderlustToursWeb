@@ -22,9 +22,9 @@ const Landing = () => {
               <div className='Trip_section_inner'>
                 <Row>
                  {
-                  store._excursions.map(excursion => {
-                  return <TripCard key={excursion.id} excursion={excursion}/> 
-                 })}
+                  store._excursions.slice(0, 9).map(excursion => {
+                    return <TripCard key={excursion.id} excursion={excursion} />;
+                  })}
 
                 </Row>
         
