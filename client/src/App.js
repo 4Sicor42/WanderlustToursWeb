@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useContext, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './Components/Assets/Style/user.scss';
 import './Components/Assets/Style/App.scss';
@@ -8,6 +8,8 @@ import './Components/Assets/Style/Account.scss';
 import './Components/Assets/Style/Custom.scss';
 import CircularProgress from '@mui/material/CircularProgress';
 
+import {check} from "./http/userAPI";
+import { Context } from './index.js';
 const User = lazy(() => import("./Components/layout/User"));
 const Layout = lazy(() => import("./Components/layout/Layout"));
 const Landing =lazy(() => import("./Components/Pages/Landing"));
@@ -24,6 +26,28 @@ const Account =lazy(() => import("./Components/Pages/Account/Account"));
 const AccountHistory =lazy(() => import("./Components/Pages/Account/AccountHistory"));
 
 function App() {
+
+  const { user } = useContext(Context);
+  
+  useEffect(() => {
+    try {
+      check().then(data => {
+        user.setUserId(data.id);
+        user.setEmail(data.email);
+        user.setPhone(data.phone);
+        user.setAddress(data.address);
+        user.setDate(data.date);
+        user.setName(data.name);
+        user.setImg(data.img);
+        user.setIsAuth(true)
+    })
+
+    } catch {
+      user.setIsAuth(false);
+    }
+
+}, )
+
   return (
     <>
       <Suspense fallback={<div className='loader'><h2 className='loader_text'>L<CircularProgress color="success" />ading</h2></div>}>
