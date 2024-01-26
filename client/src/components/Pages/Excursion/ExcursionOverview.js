@@ -3,7 +3,7 @@ import { Container,Row } from 'react-bootstrap';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Path from '../../Assets/Images/Excursion/overview.png';
 import Code from '../../Assets/Images/code.png';
-
+import Avatar from '@mui/material/Avatar';
 import { Context } from '../../../index.js';
 import { useLocation } from 'react-router-dom';
 
@@ -39,7 +39,7 @@ const ExcursionOverview = () => {
                            <div className='user_Detail'>
                               <div className='user_upper_header'>
                                  <div className='user_img_name'>
-                                        <img src={user.image} alt="user"></img>
+                                      <Avatar  alt={user.name} src={user.img}/>
                                         <p>{user.name}
                                           <span> Manager: {excursion.manager}</span>
                                         </p>
