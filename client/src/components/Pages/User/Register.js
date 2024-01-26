@@ -69,13 +69,16 @@ const Register = () => {
       let data;
       data = await registration(name, lastname, email, phone, password);
       user.setUserId(data.id);
-      user.setEmail(data.email);
-      user.setPhone(data.phone);
-      user.setAddress(data.address);
-      user.setDate(data.date);
-      user.setName(data.name);
-      user.setImg(data.img);
-      user.setIsAuth(true);
+        user.setEmail(data.email);
+        user.setPhone(data.phone);
+        user.setAddress(data.address);
+        user.setDate(data.date);
+        user.setName(data.name);
+        user.setImg(data.img);
+        user.setPassword(data.password);
+        user.setRole(data.role)
+        user.setIsAuth(true);
+      
 
     } catch (e) {
       alert(e.response.data.message);

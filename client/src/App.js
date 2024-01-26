@@ -30,8 +30,8 @@ function App() {
   const { user } = useContext(Context);
   
   useEffect(() => {
-    try {
-      check().then(data => {
+    check()
+      .then(data => {
         user.setUserId(data.id);
         user.setEmail(data.email);
         user.setPhone(data.phone);
@@ -39,14 +39,18 @@ function App() {
         user.setDate(data.date);
         user.setName(data.name);
         user.setImg(data.img);
-        user.setIsAuth(true)
-    })
-
-    } catch {
-      user.setIsAuth(false);
-    }
-
-}, )
+        user.setPassword(data.password);
+        user.setRole(data.role)
+        user.setIsAuth(true);
+      })
+      
+      .catch(error => {
+        if (error.response && error.response.status === 401) {
+          user.setIsAuth(false);
+        } 
+      });
+       // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -59,14 +63,16 @@ function App() {
           <Route element={<Layout />}>
               <Route path='/' element={<Landing />} />
               <Route path="excursion/list" element={<ExcursionList />} />
-              <Route path="/excursion/:id" element={<ExcursionDetail />}>
-              </Route>
+
               <Route path="/excursion/:id" element={<ExcursionDetail/>} />
+
+
 
               <Route path="/excursion/:id/booking" element={<ExcursionBooking/>} />
 
               <Route path="/excursion/:id/overview" element={<ExcursionOverview/>} />
-              
+
+
               <Route path='/account' element={<Account />}/>
               <Route path='/account/history' element={<AccountHistory />}/>
           </Route>

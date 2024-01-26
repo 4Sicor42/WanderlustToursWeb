@@ -15,7 +15,7 @@ import { Context } from '../../../index.js';
 
 import AuthSlider from '../../Common/auth/AuthSlider';
 import FormHeader from '../../Common/auth/FormHeader';
-import {login,check} from "../../../http/userAPI";
+import {login} from "../../../http/userAPI";
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     let navigate=useNavigate();
@@ -41,15 +41,17 @@ const Login = () => {
       
         try {
             let data= await login(email, password);
-            user.setEmail(data.email);
-            check().then(data => {
-                user.setUserId(data.id);
-                user.setPhone(data.phone);
-                user.setAddress(data.address);
-                user.setDate(data.date);
-                user.setName(data.name);
-                user.setImg(data.img);
-                user.setIsAuth(true)})
+            user.setUserId(data.id);
+        user.setEmail(data.email);
+        user.setPhone(data.phone);
+        user.setAddress(data.address);
+        user.setDate(data.date);
+        user.setName(data.name);
+        user.setImg(data.img);
+        user.setPassword(data.password);
+        user.setRole(data.role)
+        user.setIsAuth(true);
+        
         } catch (e) {
           alert(e.response.data.message);
           return;

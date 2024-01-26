@@ -14,8 +14,21 @@ export const login = async (email, password) => {
     return jwtDecode(data.token)
 }
 
-export const check = async () => { 
-    const {data} = await $authHost.get('api/user/auth' )
+export const update = async (name, email,phone,address,date,password,id) => {
+    const {data} = await $host.put(`/api/user/${id}`, {name, email,phone,address,date,password})
     localStorage.setItem('token', data.token)
     return jwtDecode(data.token)
 }
+
+export const check = async () => { 
+    const token = localStorage.getItem('token');
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    };
+  
+    const { data } = await $authHost.get('api/user/auth', config);
+    localStorage.setItem('token', data.token);
+    return jwtDecode(data.token);
+  }
