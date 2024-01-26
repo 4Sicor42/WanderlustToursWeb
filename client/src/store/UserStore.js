@@ -8,7 +8,8 @@ export default class UserStore {
         address: null,  
         date: null,
         name: null,
-        img: null
+        img: null,
+        role: 'user'
       };
   
      
@@ -23,7 +24,8 @@ export default class UserStore {
             address: null,  
             date: null,
             name: null,
-            img: null
+            img: null,
+            role: null
           };
       }
 
@@ -67,11 +69,19 @@ export default class UserStore {
       this._user.name = name;
     }
     
+    setRole(role){
+      this._user.role = role;
+    }
+
+    get role() {
+      return this._user.role;
+    }
+    
     get isAuth() {
       return this._isAuth;
     }
   
-    get userId() {
+    get id() {
         return this._user.id;
     }
     
@@ -103,8 +113,5 @@ export default class UserStore {
       return this._user.name;
     }
   
-    get role() {
-      return this._user.role;
-    }
   
   }
