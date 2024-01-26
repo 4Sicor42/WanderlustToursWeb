@@ -16,4 +16,66 @@
     .body_wrapper {
         flex: 1;
     }
+    .profile-page {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #fff;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    
+    .profile-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      padding: 10px;
+      
+    }
+    .profile-header h1 {
+      margin-left: 20px;
+      font-size: 24px;
+    }
+    
+    
+    .profile-info-item {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .edit-btns {
+      display: flex;
+      margin-top: 10px;
+    }
+    .edit-btns button {
+      margin-left: 10px;
+      background-color: var(--data-color-primary);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .sidebar {
+      background: #333;
+      color: #fff;
+    }
+    
+    .sidebar a {
+      color: #fff;
+      display: block;
+      padding: 15px;
+      border-bottom: 1px solid #222;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background-color: #222;
+    }
+    .sidebar a:last-child {
+      border-bottom: none;
+    }
+      
+      
 }
