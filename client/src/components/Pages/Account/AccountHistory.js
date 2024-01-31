@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import HistoryComponent from '../../Common/HistoryComponent';
+
+
 
 const AccountHistory = () => {
+
   return (
-    <div>AccountHistory</div>
+    <div className="profile-page">
+      <HistoryComponent/>
+    </div>
   )
 }
 

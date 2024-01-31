@@ -4,7 +4,7 @@ import { FreeMode, Pagination } from "swiper";
 import ReviewItem from './ReviewItem';
 import { Context } from '../../index.js';
 import {Swiper, SwiperSlide} from 'swiper/react';
-
+import { Autoplay } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -35,8 +35,9 @@ function ReviewsComponent() {
                     pagination={{
                       clickable: true,
                     }}
-                    modules={[FreeMode, Pagination]}
+                    modules={[Autoplay,FreeMode, Pagination]}
                     className="reviewsslider"
+                    autoplay={{ delay: 2000 }}
                     >
 
 

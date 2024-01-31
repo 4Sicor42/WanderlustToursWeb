@@ -196,43 +196,51 @@ export default function EditableUserProfile({
                     <h2>Address</h2>
                     {isAddressEditing ? (
                         <>
-                            <TextField
-                                label="adress"
-                                value={address}
-                                onChange={(e) => setAddress(e.target.value)}
-                            />
-                            <Button onClick={() => handleSaveClick('address')} variant="contained">Save</Button>
+                        <TextField
+                            label="Address"
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
+                        />
+                        <Button onClick={() => handleSaveClick('address')} variant="contained">Save</Button>
                         </>
                     ) : (
                         <>
+                        {address ? (
                             <span>{address}</span>
-                            <Button onClick={() => handleEditClick('address')} variant="outlined">Edit</Button>
+                        ) : (
+                            <span>No info</span>
+                        )}
+                        <Button onClick={() => handleEditClick('address')} variant="outlined">Edit</Button>
                         </>
                     )}
-                </div>
-                <div className="profile-info-item">
+                    </div>
+                    <div className="profile-info-item">
                     <h2>Date of Birth</h2>
                     {isDateEditing ? (
                         <>
-                            <TextField
-                                label="Date of Birth"
-                                value={date}
-                                onChange={(e) => setDate(e.target.value)}
-                            />
-                            <Button onClick={() => handleSaveClick('date')} variant="contained">Save</Button>
+                        <TextField
+                            label="Date of Birth"
+                            value={date}
+                            onChange={(e) => setDate(e.target.value)}
+                        />
+                        <Button onClick={() => handleSaveClick('date')} variant="contained">Save</Button>
                         </>
                     ) : (
                         <>
+                        {date ? (
                             <span>{date.split('T')[0]}</span>
-                            <Button onClick={() => handleEditClick('date')} variant="outlined">Edit</Button>
+                        ) : (
+                            <span>No info</span>
+                        )}
+                        <Button onClick={() => handleEditClick('date')} variant="outlined">Edit</Button>
                         </>
                     )}
-                </div>
-                <div className="profile-info-item">
-                    <h2>Password</h2>
-                    {isPasswordEditing ? (
-                        <>
-                            <div className='col-12'>
+                    </div>
+                    <div className="profile-info-item">
+                        <h2>Password</h2>
+                        {isPasswordEditing ? (
+                            <>
+                                <div className='col-12'>
                   <div className='form_input_outer'>
                     <FormControl sx={{ width: "100%" }} variant="outlined" className='field-text-border'>
                       <InputLabel htmlFor="OutlinedInput-password">Password</InputLabel>
