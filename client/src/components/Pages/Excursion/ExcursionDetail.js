@@ -10,6 +10,7 @@ const ExcursionDetail = () => {
   const location = useLocation();
 
   const excursion = location.state?.excursion;
+  //console.log(excursion.excursionInfos[0].overview);
   if (excursion ==null){
     return <NotFound/>
   }

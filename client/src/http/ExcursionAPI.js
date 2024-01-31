@@ -1,24 +1,26 @@
 import {$authHost, $host} from "./index";
 
 
+export const createExcursion = async (excursion) => {
+    const formData = new FormData();
+    formData.append('img', excursion.img);
+    formData.append('name', excursion.name);
+    formData.append('country', excursion.country);
+    formData.append('date', excursion.date);
+    formData.append('count', excursion.count);
+    formData.append('price', excursion.price);
+    formData.append('manager', excursion.manager);
+    formData.append('adress', excursion.adress);
+    formData.append('average_rating', excursion.average_rating);
+    formData.append('overview', excursion.overview);
 
-export const fetchTypes = async () => {
-    const {data} = await $host.get('api/type')
-    return data
-}
+    const { data } = await $authHost.post('api/excursion', formData);
+    return data;
+};
 
-export const createBrand = async (brand) => {
-    const {data} = await $authHost.post('api/brand', brand)
-    return data
-}
 
-export const fetchBrands = async () => {
-    const {data} = await $host.get('api/brand', )
-    return data
-}
-
-export const createDevice = async (device) => {
-    const {data} = await $authHost.post('api/device', device)
+export const fetchHistory = async (userId) => {
+    const {data} = await $host.get('api/history/'+ userId)
     return data
 }
 
@@ -27,12 +29,13 @@ export const fetchExcursions = async (limit) => {
     return data
 }
 
-export const fetchHistory = async (userId) => {
-    const {data} = await $host.get('api/history/'+ userId)
-    return data
-}
+export const bookExcursion = async (userId,excursionId,meet,code,name) => {
 
-export const fetchOneDevice = async (id) => {
-    const {data} = await $host.get('api/device/' + id)
+     const { data } = await $authHost.post(`api/history/${userId}`, {
+        excursionId,
+        meet,
+        code,
+        name
+    });
     return data
 }
