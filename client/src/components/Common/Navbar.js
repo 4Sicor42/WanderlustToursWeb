@@ -34,7 +34,7 @@ const Navbar = () => {
         <button onClick={handleToggler}><MenuIcon /></button>
       </div>
       <div className={`navbar_inner ${navbartogle ? "toggle_navbar" : ""} `}>
-        <button className='navbar_close_btn' onClick={() => setToggler(false)}><MenuIcon /></button>
+        <button className='navbar_close_btn' onClick={() => setToggler(false)}>X</button>
         <div className='navbar_links'>
           <Link to="excursion/list" className={excursionClass}><AirportShuttleIcon className='aeroplane' /> Find excursion</Link>
         </div>

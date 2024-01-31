@@ -17,7 +17,7 @@ const ExcursionItemCard = ({excursion}) => {
 
     <div className='flight_card_inner'>
         <div className='card_img'>
-            <img src={excursion.img} alt={excursion.name}></img>
+            <img src={process.env.REACT_APP_API_URL + excursion.img} alt={excursion.name}></img>
         </div>
         <div className='detail_container'>
             <div className='review_price_container'>

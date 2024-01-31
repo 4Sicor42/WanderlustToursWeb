@@ -15,7 +15,7 @@ const TripCard = ({excursion}) => {
     onClick={handleClick}>
             <div className='trip_Card'>
                 <div className='img_div'>
-                <img src={excursion.img} alt={excursion.name}></img>
+                <img src={process.env.REACT_APP_API_URL + excursion.img} alt={excursion.name}></img>
                 </div>
                 <div className='info_div'>
                     <h3>{excursion.country}</h3>
