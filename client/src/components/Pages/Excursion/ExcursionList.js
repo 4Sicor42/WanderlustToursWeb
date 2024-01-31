@@ -28,11 +28,12 @@ const ExcursionList = () => {
       setMaxPrice(Math.max(...prices));
       setValue([Math.min(...prices), Math.max(...prices)]);
     });
-
-    fetchHistory(user.id).then(data => {
+    if (user.IsAuth){
+      fetchHistory(user.id).then(data => {
       store.setHistory(data.history);
-    });
-  }, [limit]); // Fetch excursions whenever the limit changes
+    });}
+    
+  }, [limit, store, user.IsAuth, user.id]);
 
   const minDistance = Math.round(maxPrice / 4);
 

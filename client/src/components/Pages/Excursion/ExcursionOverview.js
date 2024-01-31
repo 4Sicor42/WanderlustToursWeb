@@ -6,7 +6,7 @@ import Code from '../../Assets/Images/code.png';
 import Avatar from '@mui/material/Avatar';
 import { Context } from '../../../index.js';
 import { useLocation } from 'react-router-dom';
-
+import UnauthorizedComponent from '../../Common/UnauthorizedComponent';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 
@@ -14,7 +14,11 @@ const ExcursionOverview = () => {
   const {user} = useContext(Context);
   const location = useLocation();
   const excursion = location.state.excursion;
-  console.log(user)
+
+  if (!user.isAuth) {
+    return <UnauthorizedComponent/>;
+  }
+
   return (
     <div className='booking_overview_wrapper'>
         <Container>

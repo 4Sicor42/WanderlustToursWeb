@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Container,Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Leftarrow from '../../Assets/Images/icons/left.png';
-
+import { Context } from '../../../index.js';
+import UnauthorizedComponent from '../../Common/UnauthorizedComponent';
+import NotFound from '../NotFound';
 // icons 
 import ApartmentIcon from '@mui/icons-material/Apartment';
 
 const ExcursionBooking = () => {
+    const { user } = useContext(Context);
     const location = useLocation();
-    const excursion = location.state.excursion;
+    const excursion = location.state?.excursion;
 
     const handleClick = () => {
         navigate(`/excursion/${excursion.id}/overview`, {
@@ -19,6 +22,15 @@ const ExcursionBooking = () => {
       }
 
     let navigate=useNavigate();   
+
+    if (!user.isAuth) {
+        return <UnauthorizedComponent/>;
+      }
+    
+    if (excursion ==null){
+        return <NotFound/>
+    }
+
   return (
     <div className='flightBooking_wrapper'>
         
@@ -32,7 +44,7 @@ const ExcursionBooking = () => {
                         </div>
                             <div className='flight_name_icons'>
                                 <div className='name_img'>
-                                    <img src={excursion.img} alt={excursion.name}></img>
+                                    <img src={process.env.REACT_APP_API_URL + excursion.img} alt={excursion.name}></img>
                                     <div className='name'>
                                         <h5>{excursion.country}</h5>
                                         <p>{excursion.adress}</p>
@@ -55,7 +67,7 @@ const ExcursionBooking = () => {
                 <div className='col-12 col-lg-4'>
                     <div className='flight_overview_Card' >
                         <div className='header'>
-                            <img src={excursion.img} alt={excursion.name}></img>
+                            <img src={process.env.REACT_APP_API_URL + excursion.img} alt={excursion.name}></img>
                             <div className='header_info'>
                                 <p>{excursion.manager}</p>
                                 <h4>{excursion.name}</h4>
