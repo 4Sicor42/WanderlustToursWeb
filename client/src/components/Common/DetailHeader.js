@@ -6,7 +6,7 @@ import StarIcon from '@mui/icons-material/Star';
 
 const DetailHeader = ({excursion}) => {
     let navigate=useNavigate();
-    
+
     const handleClick = () => {
         navigate(`/excursion/${excursion.id}/booking`, {
           replace: true,
@@ -19,10 +19,10 @@ const DetailHeader = ({excursion}) => {
             <div className='col-12 col-md-6'>
                 <div className='item_detail'>
                     <h3>{excursion.name}</h3>
-                    <p className='address'> <LocationOnIcon /> {excursion.country},{excursion.adress}</p>
+                    <p className='address'> <LocationOnIcon /> {excursion.country}, {excursion.address}</p>
                     <div className='flight_review'>
-                        <span className='review_btn'>{excursion.rating}</span>
-                        <p className='review_status'>{[...Array(excursion.rating)].map((star, i) => (
+                        <span className='review_btn'>{excursion.averageRating}</span>
+                        <p className='review_status'>{[...Array(excursion.averageRating)].map((star, i) => (
                               <StarIcon key={i} />
                             ))}</p>
                     </div>

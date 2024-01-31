@@ -25,7 +25,7 @@ const ExcursionItemCard = ({excursion}) => {
                 <Heading title={excursion.name} desc={excursion.country} />
                 </div>
                 <div className='reviews'>
-                    <span className='rating_number'>{[...Array(excursion.rating)].map((star, i) => (
+                    <span className='rating_number'>{[...Array(excursion.averageRating)].map((star, i) => (
                               <StarIcon key={i} />
                             ))}</span>
                 </div>                
