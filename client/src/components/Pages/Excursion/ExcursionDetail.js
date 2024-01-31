@@ -27,7 +27,7 @@ const ExcursionDetail = () => {
             </div>
          </div>
           <div>
-            <Heading title="Ovewview" desc = {excursion.overview}/>
+            <Heading title="Ovewview" desc = {excursion.excursionInfos[0].overview}/>
           </div>
        </Container>
     </div>

@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react';
 import Profile from './Profile.js';
 import { Context } from '../../../index';
 import UnauthorizedComponent from '../../Common/UnauthorizedComponent';
-import AccountHistory from './AccountHistory.js';
-
+import AccountHistory from './AccountHistory';
+import AdminAccount from './AdminAccount';
 const Account = () => {
   const { user } = useContext(Context);
   const [activeTab, setActiveTab] = useState('profile');
@@ -32,10 +32,20 @@ const Account = () => {
         >
           History
         </button>
+        {user.role === 'ADMIN' ?
+        <button
+          className={`account-tab ${activeTab === 'ADMIN' ? 'active' : ''}`}
+          onClick={() => handleTabClick('ADMIN')}
+        >
+          Admin Menu
+        </button> 
+        :
+         '' }
       </div>
 
       {activeTab === 'profile' && <Profile />}
       {activeTab === 'history' && <AccountHistory />}
+      {activeTab === 'ADMIN' && <AdminAccount />}
     </div>
   );
 };
