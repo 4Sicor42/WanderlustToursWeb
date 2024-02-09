@@ -3,9 +3,9 @@ const ApiError = require('../error/ApiError');
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-const generateJwt = (id, email, role) => {
+const generateJwt = (id, email, phone,  name, img, password, address, date, role) => {
   return jwt.sign(
-      {id, email, role},
+      {id, email, phone,  name, img, password, address, date, role},
       process.env.SECRET_KEY,
       {expiresIn: '24h'}
   )
@@ -15,7 +15,8 @@ const generateJwt = (id, email, role) => {
 
 class userController {
   async registration(req, res, next) {
-    const {email, password, role} = req.body
+    const {name, lastname, email, phone, password, role} = req.body
+
         if (!email || !password) {
             return next(ApiError.badRequest('Некорректный email или password'))
         }
@@ -24,9 +25,9 @@ class userController {
             return next(ApiError.badRequest('Пользователь с таким email уже существует'))
         }
         const hashPassword = await bcrypt.hash(password, 5)
-        const user = await User.create({email, role, password: hashPassword})
+        const user = await User.create({ email,password: hashPassword,phone,name:name+" "+lastname, role})
         //const history = await UserHistory.create({userId: user.id}),name,phone,
-        const token = generateJwt(user.id, user.email, user.role)
+        const token = generateJwt(user.id,user.email, user.phone,  user.name, user.img, user.password,null,null, user.role)
         return res.json({token})
     }
 
@@ -40,12 +41,12 @@ class userController {
       if (!comparePassword) {
           return next(ApiError.internal('Указан неверный пароль'))
       }
-      const token = generateJwt(user.id, user.email, user.role)
+      const token = generateJwt(user.id, user.email, user.phone,  user.name , user.img , user.password ,user.address ,user.date, user.role)
       return res.json({token})
   }
 
     async check(req, res, next) {
-        const token = generateJwt(req.user.id, req.user.email, req.user.role)
+        const token = generateJwt(req.user.id, req.user.email, req.user.phone,  req.user.name , req.user.img , req.user.password ,req.user.address, req.user.date, req.user.role)        
         return res.json({token})
     }
 
@@ -66,12 +67,23 @@ class userController {
   async updateUser(req, res) {
     try {
       const { id } = req.params;
-      const updateData = req.body;
-      const updatedUser = await User.update(updateData, { where: { id } });
-      if (!updatedUser) {
+      const { name, email, phone, address, date, password, role } = req.body;
+      const user = await User.findOne({ where: { id } });
+      if (!user) {
         return ApiError.badRequest('User not found!');
       }
-      return res.json({ message: 'User updated successfully!' });
+      
+      user.name = name ;
+      user.email = email;
+      user.phone = phone;
+      user.password = password;
+      user.address = address;
+      user.date = date;
+      user.role = role
+      await user.save();
+      
+      const token = generateJwt(user.id, user.email, user.phone,  user.name , user.img , user.password ,user.address ,user.date, user.role)
+      return res.json({token})
     } catch (error) {
       console.error(error);
       return ApiError.internal(error.message);
