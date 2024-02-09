@@ -3,7 +3,7 @@ const userController = require('../controllers/userController');
 const authMiddleware = require('../middleware/authMiddleware.js')
 const router = new Router();
 
-router.post('/', userController.registration);
+router.post('/registration', userController.registration);
 router.post('/login', userController.login);
 router.get('/auth',authMiddleware, userController.check);
 router.get('/:id', userController.getUser);
