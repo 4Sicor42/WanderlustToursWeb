@@ -6,11 +6,12 @@ const User = sequelize.define('user', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     email: {type: DataTypes.STRING, unique: true},
     password: {type: DataTypes.STRING},
-    phone:{type:DataTypes.INTEGER},
-    adress:{type:DataTypes.STRING},
+    phone:{type:DataTypes.STRING},
+    address:{type:DataTypes.STRING},
     date:{type:DataTypes.DATE},
     name:{type:DataTypes.STRING},
     role: {type: DataTypes.STRING, defaultValue: "USER"},
+    img: {type: DataTypes.STRING, defaultValue: "DefaultImage"}
 })
 
 const Excursion = sequelize.define('excursion', {
@@ -28,14 +29,13 @@ const Excursion = sequelize.define('excursion', {
 
 const Excursion_Info = sequelize.define('excursion_info', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    overview:{type:DataTypes.STRING}
+    overview:{type:DataTypes.TEXT}
 })
 
 const Excursion_History = sequelize.define('excursion_history', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     meet:{type:DataTypes.STRING},
     code:{type: DataTypes.INTEGER, defaultValue: 210},
-    manager:{type:DataTypes.STRING},
     name:{type:DataTypes.STRING},
     timestamp: {type: DataTypes.DATE, defaultValue: Date.now}
 })
