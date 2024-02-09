@@ -1,6 +1,9 @@
-#WanderlustTours Web site
+# WanderlustTours Web site
+
 [ViewMaket](https://www.figma.com/file/lS1aV3QqjHTJr6sQtvAgKK/Golobe---Travel-agency-website-(Community)?type=design&node-id=9%3A569&mode=design&t=ycsK3huT5qsTsX2M-1)
+
 # Branches
+
 [ViewBranchServer](https://github.com/4Sicor42/WanderlustToursWeb/tree/server)
 
 [ViewBranchClient](https://github.com/4Sicor42/WanderlustToursWeb/tree/client)
@@ -25,8 +28,9 @@ For server floder
 npm i
 npm run dev
 ```
-```
+
 For client floder
+```
 cd client
 npm i
 npm start
