@@ -6,9 +6,10 @@ const path = require('path');
 class excursionController {
   // Получить все экскурсии
   async getExcursions(req, res) {
+    let {limit} = req.query || 4
     try {
-      const excursions = await Excursion.findAll({
-        include: [Excursion_Info],
+      const excursions = await Excursion.findAndCountAll({
+        include: [Excursion_Info],limit
       });
       return res.json(excursions);
     } catch (error) {
@@ -23,7 +24,7 @@ class excursionController {
 
       const { adress, country, average_rating, date, count, price, manager, name, overview } = req.body;
       const {img} = req.files;
-
+      
       if (!img) {
         return ApiError.badRequest('Необходимо загрузить изображение экскурсии');
       }      
