@@ -20,17 +20,18 @@ DB_HOST=localhost
 DB_PORT=5432
 SECRET_KEY=MJLVLS
 ```
-### *4. Configure env file, like database user, password and etc.
-### *5. SECRET_KEY is used for encryption in datebase, so you need to change it for better protection.
-### *6. Open terminal and type:
-For server floder
+### 4. Configure env file, like database user, password and etc.
+### 5. SECRET_KEY is used for encryption in datebase, so you need to change it for better protection.
+### 6. Open terminal and type:
+* For server floder
+
 ```
 cd server
 npm i
 npm run dev
 ```
 
-For client floder
+* For client floder
 ```
 cd client
 npm i
