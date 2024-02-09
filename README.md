@@ -22,9 +22,10 @@ SECRET_KEY=MJLVLS
 ```
 ### 4. Configure env file, like database user, password and etc.
 ### 5. SECRET_KEY is used for encryption in datebase, so you need to change it for better protection.
-### 6.Open terminal and type:
+### 6. Open terminal and type:
 For server floder
-```cd server
+```
+cd server
 npm i
 npm run dev
 ```
