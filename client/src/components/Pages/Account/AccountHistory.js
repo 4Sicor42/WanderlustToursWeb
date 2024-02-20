@@ -17,13 +17,14 @@ const AccountHistory = () => {
         setIsLoading(false);
       });
   }, [user]);
-
+  
   return (
     <div className="profile-page">
       <h1>History excursion of {user.name}</h1>
       {isLoading ? (
         <p>Loading history...</p>
       ) : history.length > 0 ? (
+        
         <HistoryComponent history={history} />
       ) : (
         <p>No history available.</p>

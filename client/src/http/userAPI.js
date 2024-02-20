@@ -14,8 +14,8 @@ export const login = async (email, password) => {
     return jwtDecode(data.token)
 }
 
-export const update = async (name, email,phone,address,date,password,id) => {
-    const {data} = await $host.put(`/api/user/${id}`, {name, email,phone,address,date,password})
+export const update = async (name, email,phone,address,date,password,id,role) => {
+    const {data} = await $host.put(`/api/user/${id}`, {name, email,phone,address,date,password,role})
     localStorage.setItem('token', data.token)
     return jwtDecode(data.token)
 }

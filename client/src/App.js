@@ -62,7 +62,6 @@ function App() {
             <Route path="/excursion/:id/booking" element={<ExcursionBooking /> } />
             <Route path="/excursion/:id/overview" element={<ExcursionOverview /> } />
             <Route path='/account' element={<Account /> } />
-            <Route path="/excursion/:id/overview" element={<ExcursionOverview />}/>
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>

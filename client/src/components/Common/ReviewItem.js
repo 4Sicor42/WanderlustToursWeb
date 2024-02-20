@@ -5,7 +5,7 @@ import StarIcon from '@mui/icons-material/Star';
 
 function ReviewItem({review}) {
 
-    const {heading, description, rating, name, company, image } = review;
+    const {heading, description, rating, name, company} = review;
   
     return (
 
@@ -24,9 +24,6 @@ function ReviewItem({review}) {
                                <h4>{name}</h4>
                                <p>{company} </p>
                                
-                            </div>
-                            <div className='bottom_img'>
-                            <img src={image} alt={heading}/>
                             </div>
                         </div>
 
