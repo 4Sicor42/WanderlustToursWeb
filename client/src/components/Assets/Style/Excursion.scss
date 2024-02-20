@@ -365,8 +365,9 @@
                     }
 
                     img {
-                        height: 100px;
-                        width: auto;
+                        border-radius: 10%;
+                        height: 150px;
+                        width: 150px;
                     }
                 }
 
@@ -385,7 +386,7 @@
                             align-items: center;
 
                             .rating_number {
-                                padding: 10px;
+                                padding: 2px;
                                 border: 1px solid var(--data-color-primary);
                                 font-style: normal;
                                 font-weight: 500;
@@ -546,6 +547,19 @@
                             border: none;
                             outline: none;
                         }
+                        .detail_btn_disabled {
+                            flex: 1;
+                            background-color: lightgray;
+                            color: gray;
+                            height: 44px;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 14px;
+                            border-radius: 4px;
+                            border: none;
+                            outline: none;
+                            cursor: not-allowed;
+                            }
                     }
 
                 }

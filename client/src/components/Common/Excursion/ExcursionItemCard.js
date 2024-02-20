@@ -30,19 +30,23 @@ const ExcursionItemCard = ({excursion}) => {
                             ))}</span>
                 </div>                
                 <div className='price'>
-                    <p>starting from</p>
+                    <p>Starting from</p>
                     <span>{excursion.price}$</span>
-
+                    <p>Count of tickets : </p>
+                    <span>{excursion.count}</span>
                 </div>
+                
             </div>
             <div className='detail_fav_container'>
-            <button 
-            className="detail_btn"
+            <button
+            className={excursion.count === 0 ? "detail_btn_disabled" : "detail_btn"}
+            disabled={excursion.count === 0}
             onClick={handleClick}
+           
             >
             View Detail
             </button>
-            </div>
+          </div>
             
         </div>
     </div>

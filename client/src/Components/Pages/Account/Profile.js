@@ -117,12 +117,13 @@ export default function EditableUserProfile({
             address: user.address,
             date: user.date || today,
             password: user.password ,
+            role: user.role
           };
 
           try {
             // eslint-disable-next-line
-            let data =  update(updatedUser.name,updatedUser.email,updatedUser.phone, updatedUser.address, updatedUser.date ,updatedUser.password,user.id);
-        
+            let data =  update(updatedUser.name,updatedUser.email,updatedUser.phone, updatedUser.address, updatedUser.date ,updatedUser.password,user.id,updatedUser.role);
+            
         } catch (e) {
           alert(e.response.data.message);
           return;
@@ -210,7 +211,11 @@ export default function EditableUserProfile({
                         ) : (
                             <span>No info</span>
                         )}
-                        <Button onClick={() => handleEditClick('address')} variant="outlined">Edit</Button>
+                        <Button onClick={() => handleEditClick('address')} variant="outlined">{address? (
+                               <>Edit</>
+                        ):(
+                            <> Add address</>
+                        )}</Button>
                         </>
                     )}
                     </div>
@@ -232,7 +237,13 @@ export default function EditableUserProfile({
                         ) : (
                             <span>No info</span>
                         )}
-                        <Button onClick={() => handleEditClick('date')} variant="outlined">Edit</Button>
+                        <Button onClick={() => handleEditClick('date')} variant="outlined">
+                            {date? (
+                               <>Edit</>
+                        ):(
+                            <> Add date</>
+                        )}
+                        </Button>
                         </>
                     )}
                     </div>

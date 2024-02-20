@@ -29,6 +29,11 @@ export const fetchExcursions = async (limit) => {
     return data
 }
 
+export const fetchOneExcursion = async (excursionId) => {
+    const {data} = await $host.get('api/excursion/' + excursionId )
+    return data
+}
+
 export const bookExcursion = async (userId,excursionId,meet,code,name) => {
 
      const { data } = await $authHost.post(`api/history/${userId}`, {
