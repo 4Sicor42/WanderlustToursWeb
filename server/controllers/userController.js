@@ -81,7 +81,6 @@ class userController {
       user.date = date;
       user.role = role
       await user.save();
-      
       const token = generateJwt(user.id, user.email, user.phone,  user.name , user.img , user.password ,user.address ,user.date, user.role)
       return res.json({token})
     } catch (error) {

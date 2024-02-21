@@ -26,7 +26,10 @@ class historyController {
     try {
       const { id } = req.params;
       const { excursionId, meet, code, name } = req.body;
-      
+
+      const excursion = await Excursion.findByPk(excursionId);
+      excursion.count = excursion.count - 1;
+
       const history = await Excursion_History.create({
         userId: id,
         excursionId,
@@ -34,7 +37,9 @@ class historyController {
         code,
         name,
       });
-  
+
+      await excursion.save();
+
       return res.json({ message: "History created successfully", history });
     } catch (error) {
       next(error);
