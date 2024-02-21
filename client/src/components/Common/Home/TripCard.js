@@ -9,6 +9,7 @@ const TripCard = ({excursion}) => {
     });
   
   }
+  console.log(excursion.rating)
   return (
     <div 
     className='col-12 col-md-6 col-lg-4'
@@ -20,9 +21,9 @@ const TripCard = ({excursion}) => {
                 <div className='info_div'>
                     <h3>{excursion.country}</h3>
                     <div className='facility'>
-                        <span>Rayting : {excursion.rating}</span>
+                        <span>Rayting : {excursion.averageRating}/5</span>
 
-                        <span>Date : {excursion.date}</span>
+                        <span>Date : {excursion.date.split('T')[0]}</span>
                     </div>
                 </div>
             </div>
